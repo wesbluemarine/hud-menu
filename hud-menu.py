@@ -77,6 +77,9 @@ def try_appmenu_interface(window_id):
   dmenu_result = dmenu_cmd.communicate()[0].decode('utf8').rstrip()
   dmenu_cmd.stdin.close()
 
+  if dmenu_result.endswith("\n"):
+    dmenu_result = dmenu_result[:-1]
+
   # --- Use dmenu result
   if dmenu_result in dbusmenu_item_dict:
     action = dbusmenu_item_dict[dmenu_result]
@@ -151,6 +154,9 @@ def try_gtk_interface(gtk_bus_name_cmd, gtk_object_path_cmd):
   dmenu_result = dmenu_cmd.communicate()[0].decode('utf8').rstrip()
   dmenu_cmd.stdin.close()
 
+  if dmenu_result.endswith("\n"):
+    dmenu_result = dmenu_result[:-1]
+
   # --- Use dmenu result
   if dmenu_result in gtk_menubar_action_dict:
     action = gtk_menubar_action_dict[dmenu_result]
@@ -175,7 +181,9 @@ gtk_object_path_cmd = subprocess.check_output(['xprop', '-id', window_id, '-noty
 
 # print(gtk_bus_name_cmd)
 
-if gtk_bus_name_cmd == '_GTK_UNIQUE_BUS_NAME:  not found.\n' or gtk_object_path_cmd == '_GTK_MENUBAR_OBJECT_PATH:  not found.\n':
+if (gtk_bus_name_cmd == '_GTK_UNIQUE_BUS_NAME:  not found.\n' or
+ gtk_bus_name_cmd == '_GTK_UNIQUE_BUS_NAME:  no such atom on any window.\n' or
+ gtk_object_path_cmd == '_GTK_MENUBAR_OBJECT_PATH:  not found.\n'):
   try_appmenu_interface(int(window_id, 16))
 else:
   try_gtk_interface(gtk_bus_name_cmd, gtk_object_path_cmd)
