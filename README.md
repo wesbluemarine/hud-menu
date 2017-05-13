@@ -1,13 +1,17 @@
 hud-menu
 ===========
 
-Provides a way to run menubar commands through dmenu.
+Provides a way to run menubar commands through a searchable list.
+
 
 Dependencies
 ============
 * python-dbus
-* dmenu
-
+* rofi
+* unity-gtk-modules
+ * Some systems may need _unity-gtk-module-standalone-bzr_ installed instead.
+  * If using the bzr packge you may need to set _com.canonical.unity-gtk-module gtk2-shell-shows-menubar_ to false under dconf. 
+ 
 
 Setup
 ============
@@ -38,3 +42,7 @@ Explanation
 ============
 hud-menu-service.py  is an implementation of the com.canonical.AppMenu.Registrar DBus service.  Applications exporting their menu through dbusmenu need this service to run.
 hud-menu.py tries to get the menu of the currently focused X11 window, lists possible actions and asks the user which one to run.
+
+Warning
+============
+Installation of unity-gtk-modules may disable the global-menu on some distributions as its constituent packages conflict with those the menus may depend on. This is very problematic for applications that can't support the hud-menu like FireFox and Libreoffice.
