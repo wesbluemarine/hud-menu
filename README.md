@@ -7,8 +7,8 @@ Provides a way to run menubar commands through a searchable list.
 * python-dbus
 * rofi
 * unity-gtk-modules
-.* Some systems may need _unity-gtk-module-standalone-bzr_ installed instead.
-..* If using the bzr packge you may need to set _com.canonical.unity-gtk-module gtk2-shell-shows-menubar_ to false under dconf. 
+  * Some systems may need _unity-gtk-module-standalone-bzr_ installed instead.
+    * If using the bzr packge you may need to set _com.canonical.unity-gtk-module gtk2-shell-shows-menubar_ to false under dconf. 
  
 
 ## Setup
