@@ -13,8 +13,8 @@ Provides a way to run menubar commands through a searchable list.
  
 
 ## Setup
-1. hud-menu-service.py should be started (with python 3+) on the session's startup.
-2. The following should be added to the user's .profile: 
+1. ```hud-menu-service.py``` should be started (with python 3+) on the session's startup.
+2. The following should be added to the user's ```.profile```: 
 
     ```
     if [ -n "$GTK_MODULES" ]
@@ -30,7 +30,7 @@ Provides a way to run menubar commands through a searchable list.
     fi 
    ```
     
-3. hud-menu.py should be bound to run (with python 3+) with a shortcut (such as a keyboard shortcut). 
+3. ```hud-menu.py``` should be bound to run (with python 3+) with a shortcut (such as a keyboard shortcut). 
 
 ## Usage
 The user should active the shortcut when the window they wish to show the application menu entries for has focus.  This will open the dmenu at the top.  The user can then use the keyboard to search and navigate the entries.  Pressing enter will execute the selected entry and pressing escape will close the dmenu without executing anything.
