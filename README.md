@@ -5,7 +5,7 @@ Provides a way to run menubar commands through a searchable list.
 
 ## Dependencies
 * python-dbus
-* rofi
+* rofi [(or alternatively: dmenu)](using-dmenu-in-place-of-rofi)
 * appmenu-qt
 * unity-gtk-modules
   * Some systems may need _unity-gtk-module-standalone-bzr_ installed instead.
@@ -38,6 +38,9 @@ The user should active the shortcut when the window they wish to show the applic
 ### Explanation
 hud-menu-service.py  is an implementation of the com.canonical.AppMenu.Registrar DBus service.  Applications exporting their menu through dbusmenu need this service to run.
 hud-menu.py tries to get the menu of the currently focused X11 window, lists possible actions and asks the user which one to run.
+
+### Using dmenu in place of rofi
+If you wish to use dmenu in place of rofi ensure all calls to ```hud-menu.py``` (shortcuts and bindings) supply ```dmeny``` as an argument.
 
 ### Warning
 Installation of unity-gtk-modules may disable the global-menu on some distributions as its constituent packages conflict with those the menus may depend on. This is very problematic for applications that can't support the hud-menu like FireFox and Libreoffice.
