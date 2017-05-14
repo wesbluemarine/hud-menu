@@ -5,7 +5,7 @@ Provides a way to run menubar commands through a searchable list.
 
 ## Dependencies
 * python-dbus
-* rofi [(or alternatively: dmenu)](using-dmenu-in-place-of-rofi)
+* rofi [(or alternatively: dmenu)](https://github.com/jamcnaughton/hud-menu/blob/dev/README.md#using-dmenu-in-place-of-rofi)
 * appmenu-qt
 * unity-gtk-modules
   * Some systems may need _unity-gtk-module-standalone-bzr_ installed instead.
