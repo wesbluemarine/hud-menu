@@ -1,6 +1,6 @@
 # hud-menu
 
-Provides a way to run or raise executables run menubar commands, select opened windows, through a searchable list.
+Provides a way to run or raise executables, run menubar commands, select opened windows, through a searchable list.
 
 
 ## Dependencies
